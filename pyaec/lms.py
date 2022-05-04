@@ -27,7 +27,7 @@ def lms(x, d, N = 4, mu = 0.1):
   for n in range(nIters):
     u[1:] = u[:-1]
     u[0] = x[n] # u[0, 1, 2, ...] = x[n, n-1, n-2, ...]
-    e_n = d[n] - np.dot(u, w)
+    e_n = d[n] - np.dot(u, w) # 这里np.dot(u, w)表示估计一个滤波器，根据u估计出echo；然后d[n]减去估计的echo得到的自然是nearspeech
     w = w + mu * e_n * u
     e[n] = e_n
   return e
