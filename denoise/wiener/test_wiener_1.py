@@ -51,15 +51,5 @@ if __name__ == "__main__":
     # 维纳滤波
     H, enhenc = wiener_filter(noisy, clean, noise, para_wiener)
 
-    sf.write("enhce_1.wav", enhenc, fs)
+    sf.write("sf1_a1_b8.wav", enhenc, fs)
 
-    # plt.subplot(3, 1, 1)
-    # plt.specgram(clean, NFFT=256, Fs=fs)
-    # plt.xlabel("clean specgram")
-    # plt.subplot(3, 1, 2)
-    # plt.specgram(noisy, NFFT=256, Fs=fs)
-    # plt.xlabel("noisy specgram")
-    # plt.subplot(3, 1, 3)
-    # plt.specgram(enhenc, NFFT=256, Fs=fs)
-    # plt.xlabel("enhece specgram")
-    # plt.show()
